@@ -15,7 +15,7 @@ export default function Splash() {
   }, [router]);
 
   return (
-    <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => router.push("/login")}>
+    <div className="flex flex-col items-center justify-center min-h-screen cursor-pointer" onClick={() => router.push("/login")}>
       <div className="flex flex-col items-center animate-pulse cursor-pointer">
         <Logo className="w-20 h-20 mb-4" iconClassName="w-12 h-12" />
         <h1 className="text-pawprint-green text-3xl font-bold tracking-wide">PawPrint</h1>

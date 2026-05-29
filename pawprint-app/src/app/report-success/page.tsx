@@ -93,15 +93,22 @@ function SuccessContent() {
           
           <div className="grid grid-cols-2 gap-3">
             <button 
-              onClick={() => {
+              onClick={async () => {
+                const shareUrl = window.location.origin + '/explore';
                 if (navigator.share) {
-                  navigator.share({
-                    title: isLost ? 'Lost Pet Alert!' : 'Found Pet Sighting!',
-                    text: 'Help us find this pet on PawPrint!',
-                    url: window.location.origin + '/explore',
-                  }).catch(console.error);
+                  try {
+                    await navigator.share({
+                      title: isLost ? 'Lost Pet Alert!' : 'Found Pet Sighting!',
+                      text: 'Help us find this pet on PawPrint!',
+                      url: shareUrl,
+                    });
+                  } catch (err) {
+                    // If share fails (or user cancels on desktop), fallback to clipboard
+                    navigator.clipboard.writeText(shareUrl);
+                    alert('Link copied to clipboard!');
+                  }
                 } else {
-                  navigator.clipboard.writeText(window.location.origin + '/explore');
+                  navigator.clipboard.writeText(shareUrl);
                   alert('Link copied to clipboard!');
                 }
               }}

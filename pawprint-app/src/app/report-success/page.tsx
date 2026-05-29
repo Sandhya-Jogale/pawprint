@@ -91,32 +91,7 @@ function SuccessContent() {
             Go to Live Map <ArrowRight className="w-4 h-4 ml-2" />
           </Link>
           
-          <div className="grid grid-cols-2 gap-3">
-            <button 
-              onClick={() => {
-                const shareUrl = window.location.origin + '/explore';
-                // Only try native share on mobile devices to avoid buggy Windows desktop share dialogs
-                if (navigator.share && /Mobi|Android/i.test(navigator.userAgent)) {
-                  navigator.share({
-                    title: isLost ? 'Lost Pet Alert!' : 'Found Pet Sighting!',
-                    text: 'Help us find this pet on PawPrint!',
-                    url: shareUrl,
-                  }).catch(() => {
-                    navigator.clipboard.writeText(shareUrl);
-                    alert('Link copied to clipboard!');
-                  });
-                } else {
-                  navigator.clipboard.writeText(shareUrl).then(() => {
-                    alert('Link copied to clipboard!');
-                  }).catch(() => {
-                    alert('Failed to copy. Share link: ' + shareUrl);
-                  });
-                }
-              }}
-              className="w-full bg-white border border-gray-200 text-gray-700 font-bold py-3 rounded-xl text-xs hover:bg-gray-50 transition-colors flex items-center justify-center"
-            >
-              <Share2 className="w-3.5 h-3.5 mr-2" /> Share Alert
-            </button>
+          <div className="space-y-3">
             <Link 
               href={isLost ? "/report-lost" : "/report"} 
               className="w-full bg-white border border-gray-200 text-gray-700 font-bold py-3 rounded-xl text-xs hover:bg-gray-50 transition-colors flex items-center justify-center"

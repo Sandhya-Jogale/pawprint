@@ -92,7 +92,21 @@ function SuccessContent() {
           </Link>
           
           <div className="grid grid-cols-2 gap-3">
-            <button className="w-full bg-white border border-gray-200 text-gray-700 font-bold py-3 rounded-xl text-xs hover:bg-gray-50 transition-colors flex items-center justify-center">
+            <button 
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({
+                    title: isLost ? 'Lost Pet Alert!' : 'Found Pet Sighting!',
+                    text: 'Help us find this pet on PawPrint!',
+                    url: window.location.origin + '/explore',
+                  }).catch(console.error);
+                } else {
+                  navigator.clipboard.writeText(window.location.origin + '/explore');
+                  alert('Link copied to clipboard!');
+                }
+              }}
+              className="w-full bg-white border border-gray-200 text-gray-700 font-bold py-3 rounded-xl text-xs hover:bg-gray-50 transition-colors flex items-center justify-center"
+            >
               <Share2 className="w-3.5 h-3.5 mr-2" /> Share Alert
             </button>
             <Link 

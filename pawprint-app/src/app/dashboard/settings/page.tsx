@@ -346,15 +346,15 @@ export default function Settings() {
               </h3>
 
               <div className="space-y-2">
-                <button type="button" className="w-full flex items-center justify-between py-3 px-2 hover:bg-gray-50 rounded-lg transition-colors group text-left">
+                <button type="button" onClick={() => alert("The Change Password feature is currently in development and will be available soon!")} className="w-full flex items-center justify-between py-3 px-2 hover:bg-gray-50 rounded-lg transition-colors group text-left">
                   <span className="text-[11px] font-bold text-gray-800">Change Password</span>
                   <ArrowRight className="w-3.5 h-3.5 text-pawprint-green group-hover:translate-x-0.5 transition-transform" />
                 </button>
-                <button type="button" className="w-full flex items-center justify-between py-3 px-2 hover:bg-gray-50 rounded-lg transition-colors group text-left">
+                <button type="button" onClick={() => alert("Two-Factor Authentication is currently in development and will be available soon!")} className="w-full flex items-center justify-between py-3 px-2 hover:bg-gray-50 rounded-lg transition-colors group text-left">
                   <span className="text-[11px] font-bold text-gray-800">Two-Factor Authentication</span>
                   <ArrowRight className="w-3.5 h-3.5 text-pawprint-green group-hover:translate-x-0.5 transition-transform" />
                 </button>
-                <button type="button" className="w-full flex items-center justify-between py-3 px-2 hover:bg-gray-50 rounded-lg transition-colors group text-left">
+                <button type="button" onClick={() => alert("Privacy Settings are currently in development and will be available soon!")} className="w-full flex items-center justify-between py-3 px-2 hover:bg-gray-50 rounded-lg transition-colors group text-left">
                   <span className="text-[11px] font-bold text-gray-800">Privacy Settings</span>
                   <ArrowRight className="w-3.5 h-3.5 text-pawprint-green group-hover:translate-x-0.5 transition-transform" />
                 </button>

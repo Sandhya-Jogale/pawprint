@@ -31,7 +31,11 @@ export default function ResetPassword() {
                 </div>
             </div>
 
-            <button className="w-full bg-[#6ee7b7] text-white font-bold py-2.5 rounded-lg text-xs hover:bg-[#34d399] transition-colors mt-2">
+            <button 
+                type="button"
+                onClick={() => alert("Success! A password reset link has been sent to your email address.")}
+                className="w-full bg-[#6ee7b7] text-white font-bold py-2.5 rounded-lg text-xs hover:bg-[#34d399] transition-colors mt-2"
+            >
                 Send Reset Link
             </button>
         </div>

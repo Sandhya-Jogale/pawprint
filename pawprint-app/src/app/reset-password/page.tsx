@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Mail, ArrowLeft } from "lucide-react";
 import { Logo } from "@/components/Logo";
